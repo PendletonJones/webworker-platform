@@ -1,0 +1,70 @@
+<h1>Push Notifications</h1>
+<mat-tab-group>
+    <mat-tab [label]="'Diagram'">
+        <h2>Diagram</h2>
+        <worker-platform-graphic-browser
+            [primaryBrowser]="Show"
+            [serviceWorker]="Show"
+            [backendServer]="Show"
+            [backendPushEvent]="Show"
+            [backendServerPushLabel]="Show"
+            [pushNotificationVisible]="Show"
+            [backendServerPushFetch]="Hide"
+            [secondBrowser]="Hide"
+            [secondBrowserMessageLabel]="Hide"
+            [serviceWorkerPostMessage]="Hide"
+            [serviceWorkerFetchEvent]="Hide"
+            [serviceWorkerSyncEvent]="Hide"
+            [serviceWorkerFetchLabel]="Hide"
+            [serviceWorkerMessageLabel]="Hide"
+            [serviceWorkerSyncLabel]="Hide"
+            [backendFetchEvent]="Hide"
+            [swCache]="Hide"
+            [swCacheLabel]="Hide"
+            [primaryWorker]="Hide"
+            [primaryWorkerMessageLabel]="Hide"
+            [secondWorker]="Hide"
+            [secondWorkerMessageChannel]="Hide"
+            [secondWorkerMessageLabel]="Hide"
+            [dbWorker]="Hide"
+            [dbWorkerMessageLabel]="Hide"
+        ></worker-platform-graphic-browser>
+    </mat-tab>
+    <mat-tab label="Worker Thread Code Sample">
+        <h2>Service Worker Thread</h2>
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="serviceWorkerThread"
+        >
+        </worker-platform-code-block>
+    </mat-tab>
+    <mat-tab label="Server Thread Code Sample">
+        <h2>Server</h2>
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="expressServer"
+        >
+        </worker-platform-code-block>
+    </mat-tab>    
+    <mat-tab label="Know This">
+        <div>
+            <h2>Know This</h2>
+            <ul>
+                <li>You must ask the user for permissions</li>
+                <li>Push notifications do not necessarily need to actually show a notification, you could trigger an update intsead</li>
+                <li>Subscription Management on the backend is a potential challenge</li>
+            </ul>
+        </div>
+    </mat-tab>
+    <mat-tab label="Read More">
+        <h2>Read More</h2>
+        <ul>
+            <li>https://medium.com/izettle-engineering/beginners-guide-to-web-push-notifications-using-service-workers-cb3474a17679</li>
+            <li>https://developers.google.com/web/fundamentals/codelabs/push-notifications</li>
+            <li>https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications</li>
+            <li>https://serviceworke.rs/push-simple_demo.html</li>
+            <li>https://developer.mozilla.org/en-US/docs/Web/API/Push_API</li>
+            <li>https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification</li>
+        </ul>
+    </mat-tab>
+</mat-tab-group>

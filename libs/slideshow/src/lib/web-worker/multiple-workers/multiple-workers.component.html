@@ -1,0 +1,56 @@
+<h1>Multiple Workers</h1>
+
+Single Worker
+<div class="thread-container">
+    <ng-container *ngFor="let task of (combinedTask | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>
+
+<worker-platform-code-block [language]="'typescript'" [content]="codeSample">
+</worker-platform-code-block>
+
+Worker One
+<div class="thread-container">
+    <ng-container *ngFor="let task of (separateTaskB | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>
+
+Worker Two
+<div class="thread-container">
+    <ng-container *ngFor="let task of (separateTaskC | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>
+
+Worker Three
+<div class="thread-container">
+    <ng-container *ngFor="let task of (separateTaskA | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>

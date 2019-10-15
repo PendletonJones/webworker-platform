@@ -1,0 +1,12 @@
+{
+    "extends": "../../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "workerPlatform",
+            "camelCase"
+        ],
+        "component-selector": [true, "element", "worker-platform", "kebab-case"]
+    }
+}

@@ -1,0 +1,16 @@
+<svg height="500" width="300">
+    <defs>
+        <symbol id="servers" viewBox="0 0 600 800">
+            <g>
+                <path d="M 400 0 L 400 200 L 600 200" stroke-width="50" stroke="black" fill="transparent"/>
+                <path d="M 0 0 L 0 800 L 600 800 L 600 200 L 400 0 L 0 0" stroke-width="50" stroke="black" fill="transparent"/>
+                <path d="M 50 300 L 550 300" stroke-width="50" stroke="black" fill="transparent"/>
+                <path d="M 50 400 L 500 400" stroke-width="50" stroke="black" fill="transparent"/>
+                <path d="M 50 500 L 550 500" stroke-width="50" stroke="black" fill="transparent"/>
+                <path d="M 50 600 L 500 600" stroke-width="50" stroke="black" fill="transparent"/>
+                <path d="M 50 700 L 550 700" stroke-width="50" stroke="black" fill="transparent"/>
+            </g>
+        </symbol>
+    </defs>
+    <use href="#servers" x="0" y="0" height="400" width="300"/>
+</svg>

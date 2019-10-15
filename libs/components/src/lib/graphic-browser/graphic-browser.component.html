@@ -1,0 +1,860 @@
+<svg viewBox="0 0 1600 1300">
+    <defs>
+        <symbol id="gear" viewBox="0 0 500 500">
+            <defs>
+                <g id="spoke">
+                    <path
+                        d="M 0 100 L 20 0 L 80 0 L 100 100 Z"
+                        stroke-width="10"
+                    />
+                </g>
+            </defs>
+            <g>
+                <circle
+                    cx="250"
+                    cy="250"
+                    r="150"
+                    stroke-width="100"
+                    fill="transparent"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(0, 250, 250)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(90, 250, 250)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(180, 250, 250)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(270, 250, 250)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(45, 250, 250) translate(0, -15)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(135, 250, 250) translate(0, -15)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(225, 250, 250) translate(0, -15)"
+                />
+                <use
+                    href="#spoke"
+                    x="200"
+                    y="0"
+                    height="100"
+                    width="100"
+                    transform="rotate(315, 250, 250) translate(0, -15)"
+                />
+                <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 250 250"
+                    to="360 250 250"
+                    dur="3s"
+                    repeatCount="indefinite"
+                />
+                <circle
+                    cx="250"
+                    cy="250"
+                    r="30"
+                    stroke-width="100"
+                    fill="transparent"
+                />
+            </g>
+        </symbol>
+        <symbol id="indexedDB" viewBox="0 0 100 100">
+            <path
+                d="M 0 20 L 0 80 C 0 100 100 100 100 80 L 100 20 C 100 0 0 0 0 20 C 0 40 100 40 100 20"
+                stroke="black"
+                stroke-width="4"
+                fill="transparent"
+            />
+            <path
+                d="M 10 40 C 20 50 80 50 90 40"
+                stroke-linecap="round"
+                stroke="black"
+                stroke-width="2"
+                fill="transparent"
+            />
+            <path
+                d="M 10 40 C 20 50 80 50 90 40"
+                stroke-linecap="round"
+                stroke="black"
+                stroke-width="2"
+                fill="transparent"
+                transform="translate(0, 10)"
+            />
+            <path
+                d="M 10 40 C 20 50 80 50 90 40"
+                stroke-linecap="round"
+                stroke="black"
+                stroke-width="2"
+                fill="transparent"
+                transform="translate(0, 20)"
+            />
+            <path
+                d="M 10 40 C 20 50 80 50 90 40"
+                stroke-linecap="round"
+                stroke="black"
+                stroke-width="2"
+                fill="transparent"
+                transform="translate(0, 30)"
+            />
+            <circle cx="85" cy="48" r="2" fill="red" stroke="red" />
+        </symbol>
+        <symbol id="worker" viewBox="0 0 250 250">
+            <use
+                href="#gear"
+                height="100"
+                widht="100"
+                x="-70"
+                fill="blue"
+                stroke="blue"
+            />
+            <use
+                href="#gear"
+                height="50"
+                widht="50"
+                x="0"
+                fill="black"
+                stroke="black"
+            />
+            <use
+                href="#gear"
+                height="70"
+                widht="70"
+                x="5"
+                y="50"
+                fill="red"
+                stroke="red"
+            />
+            <use
+                href="#gear"
+                height="70"
+                widht="70"
+                x="-50"
+                y="100"
+                fill="red"
+                stroke="red"
+            />
+            <use
+                href="#gear"
+                height="50"
+                widht="50"
+                x="-105"
+                y="90"
+                fill="black"
+                stroke="black"
+            />
+        </symbol>
+        <symbol id="fullWorker" viewBox="0 0 500 500">
+            <rect
+                x="0"
+                y="0"
+                height="500"
+                width="500"
+                fill="transparent"
+                stroke="black"
+                stroke-width="30"
+            />
+            <use href="#worker" x="-25" y="20" height="700" width="800" />
+        </symbol>
+        <symbol id="messagePort" viewBox="0 0 1000 1000">
+            <defs>
+                <symbol id="port" viewBox="0 0 450 450">
+                    <g>
+                        <path
+                            id="Box"
+                            d="
+                            M 0 100
+                            V 300
+                            H 450
+                            V 100
+                            Z"
+                            stroke="orange"
+                            stroke-width="25"
+                            fill=""
+                        />
+                        <path
+                            d="M 100 100 L 50 0 H 200 L 150 100 Z"
+                            stroke="blue"
+                            stroke-width="25"
+                        />
+                        <path
+                            d="M 300 100 L 250 0 H 400 L 350 100 Z"
+                            stroke="blue"
+                            stroke-width="25"
+                        />
+                    </g>
+                </symbol>
+                <symbol viewBox="0 0 0 500">
+                    <g>
+                        <path id="messagePath" d="M 0 0 L 0 500" />
+                    </g>
+                </symbol>
+                <symbol viewBox="0 0 0 500">
+                    <g>
+                        <path id="returnPath" d="M 0 500 L 0 0" />
+                    </g>
+                </symbol>
+            </defs>
+            <use
+                href="#port"
+                x="0"
+                y="0"
+                height="200"
+                width="200"
+                transform="rotate(180, 100, 100), translate(0, 60)"
+            />
+            <use
+                href="#port"
+                x="0"
+                y="0"
+                height="200"
+                width="200"
+                transform="translate(0, 600)"
+            />
+            <circle cx="65" cy="100" r="20" fill="#529fd9">
+                <animateMotion dur="1.6s" repeatCount="indefinite">
+                    <mpath href="#messagePath" />
+                </animateMotion>
+            </circle>
+            <circle cx="150" cy="100" r="20" fill="#d95252">
+                <animateMotion dur="1.6s" repeatCount="indefinite">
+                    <mpath href="#returnPath" />
+                </animateMotion>
+            </circle>
+        </symbol>
+        <symbol id="eventPort" viewBox="0 0 1000 1000">
+            <defs>
+                <symbol id="Eport" viewBox="0 0 450 450">
+                    <g>
+                        <path
+                            id="Box"
+                            d="
+                            M 0 100
+                            V 300
+                            H 450
+                            V 100
+                            Z"
+                            stroke="orange"
+                            stroke-width="25"
+                            fill=""
+                        />
+                        <path
+                            d="M 100 100 L 50 0 H 200 L 150 100 Z"
+                            stroke="blue"
+                            stroke-width="25"
+                            transform="translate(100)"
+                        />
+                        <!--<path d="M 300 100 L 250 0 H 400 L 350 100 Z" stroke="blue" stroke-width="25"/>-->
+                    </g>
+                </symbol>
+                <symbol viewBox="0 0 0 500">
+                    <g>
+                        <path id="EmessagePath" d="M 40 0 L 40 500" />
+                    </g>
+                </symbol>
+            </defs>
+            <use
+                href="#Eport"
+                x="0"
+                y="0"
+                height="200"
+                width="200"
+                transform="rotate(180, 100, 100), translate(0, 60)"
+            />
+            <use
+                href="#Eport"
+                x="0"
+                y="0"
+                height="200"
+                width="200"
+                transform="translate(0, 600)"
+            />
+            <circle cx="65" cy="100" r="50" fill="#529fd9">
+                <animateMotion dur="1.6s" repeatCount="indefinite">
+                    <mpath href="#EmessagePath" />
+                </animateMotion>
+            </circle>
+        </symbol>
+        <symbol id="servers" viewBox="0 0 511 511">
+            <g>
+                <path
+                    d="M471.5,167c21.78,0,39.5-17.72,39.5-39.5v-64c0-21.78-17.72-39.5-39.5-39.5h-432C17.72,24,0,41.72,0,63.5v64
+                    C0,149.28,17.72,167,39.5,167H248v17H39.5C17.72,184,0,201.72,0,223.5v64C0,309.28,17.72,327,39.5,327H248v17H39.5
+                    C17.72,344,0,361.72,0,383.5v64C0,469.28,17.72,487,39.5,487h432c21.78,0,39.5-17.72,39.5-39.5v-64c0-21.78-17.72-39.5-39.5-39.5
+                    H263v-17h208.5c21.78,0,39.5-17.72,39.5-39.5v-64c0-21.78-17.72-39.5-39.5-39.5H263v-17H471.5z M496,383.5v64
+                    c0,13.51-10.991,24.5-24.5,24.5h-432C25.991,472,15,461.01,15,447.5v-64c0-13.51,10.991-24.5,24.5-24.5h432
+                    C485.009,359,496,369.99,496,383.5z M496,223.5v64c0,13.51-10.991,24.5-24.5,24.5h-432C25.991,312,15,301.01,15,287.5v-64
+                    c0-13.51,10.991-24.5,24.5-24.5h432C485.009,199,496,209.99,496,223.5z M15,127.5v-64C15,49.99,25.991,39,39.5,39h432
+                    c13.509,0,24.5,10.99,24.5,24.5v64c0,13.51-10.991,24.5-24.5,24.5h-432C25.991,152,15,141.01,15,127.5z"
+                />
+                <path
+                    d="M71.5,64C54.131,64,40,78.131,40,95.5S54.131,127,71.5,127S103,112.869,103,95.5S88.869,64,71.5,64z M71.5,112
+		            c-9.098,0-16.5-7.402-16.5-16.5S62.402,79,71.5,79S88,86.402,88,95.5S80.598,112,71.5,112z"
+                />
+                <path
+                    d="M143.5,72C130.542,72,120,82.542,120,95.5s10.542,23.5,23.5,23.5S167,108.458,167,95.5S156.458,72,143.5,72z M143.5,104
+		            c-4.687,0-8.5-3.813-8.5-8.5s3.813-8.5,8.5-8.5s8.5,3.813,8.5,8.5S148.187,104,143.5,104z"
+                />
+                <path
+                    d="M71.5,224C54.131,224,40,238.131,40,255.5S54.131,287,71.5,287s31.5-14.131,31.5-31.5S88.869,224,71.5,224z M71.5,272
+		            c-9.098,0-16.5-7.402-16.5-16.5S62.402,239,71.5,239S88,246.402,88,255.5S80.598,272,71.5,272z"
+                />
+                <path
+                    d="M143.5,232c-12.958,0-23.5,10.542-23.5,23.5s10.542,23.5,23.5,23.5s23.5-10.542,23.5-23.5S156.458,232,143.5,232z
+		            M143.5,264c-4.687,0-8.5-3.813-8.5-8.5s3.813-8.5,8.5-8.5s8.5,3.813,8.5,8.5S148.187,264,143.5,264z"
+                />
+                <path
+                    d="M455.5,264h-264c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h264c4.142,0,7.5-3.357,7.5-7.5S459.642,264,455.5,264z"
+                />
+                <path
+                    d="M184,239.5c0,4.143,3.358,7.5,7.5,7.5h264c4.142,0,7.5-3.357,7.5-7.5s-3.358-7.5-7.5-7.5h-264
+		            C187.358,232,184,235.357,184,239.5z"
+                />
+                <path
+                    d="M463,111.5c0-4.143-3.358-7.5-7.5-7.5h-264c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h264
+		            C459.642,119,463,115.643,463,111.5z"
+                />
+                <path
+                    d="M191.5,87h264c4.142,0,7.5-3.357,7.5-7.5s-3.358-7.5-7.5-7.5h-264c-4.142,0-7.5,3.357-7.5,7.5S187.358,87,191.5,87z"
+                />
+                <path
+                    d="M71.5,384C54.131,384,40,398.131,40,415.5S54.131,447,71.5,447s31.5-14.131,31.5-31.5S88.869,384,71.5,384z M71.5,432
+		            c-9.098,0-16.5-7.402-16.5-16.5S62.402,399,71.5,399S88,406.402,88,415.5S80.598,432,71.5,432z"
+                />
+                <path
+                    d="M143.5,392c-12.958,0-23.5,10.542-23.5,23.5s10.542,23.5,23.5,23.5s23.5-10.542,23.5-23.5S156.458,392,143.5,392z
+		            M143.5,424c-4.687,0-8.5-3.813-8.5-8.5s3.813-8.5,8.5-8.5s8.5,3.813,8.5,8.5S148.187,424,143.5,424z"
+                />
+                <path
+                    d="M455.5,424h-264c-4.142,0-7.5,3.357-7.5,7.5s3.358,7.5,7.5,7.5h264c4.142,0,7.5-3.357,7.5-7.5S459.642,424,455.5,424z"
+                />
+                <path
+                    d="M184,399.5c0,4.143,3.358,7.5,7.5,7.5h264c4.142,0,7.5-3.357,7.5-7.5s-3.358-7.5-7.5-7.5h-264
+		            C187.358,392,184,395.357,184,399.5z"
+                />
+            </g>
+        </symbol>
+        <symbol id="horizMessagePort">
+            <g transform="rotate(90, 800, 400), translate(100, 0)">
+                <use href="#messagePort" x="0" y="0" height="540" />
+            </g>
+        </symbol>
+        <symbol id="fullBrowser" viewBox="0 0 1600 1000">
+            <defs>
+                <symbol id="back" viewBox="0 0 100 100">
+                    <path
+                        d="M 40 10 L 10 50 L 40 90"
+                        fill="transparent"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                    <path
+                        d="M 90 50 L 10 50"
+                        fill="transparent"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                </symbol>
+                <symbol id="browser" viewBox="0 0 1600 1000">
+                    <rect
+                        x="0"
+                        y="0"
+                        height="1000"
+                        width="1600"
+                        fill="#cfcffb"
+                    />
+                </symbol>
+                <symbol id="minimize" viewBox="0 0 100 100">
+                    <path
+                        d="M 10 50 L 90 50"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                </symbol>
+                <symbol id="maximize" viewBox="0 0 100 100">
+                    <path
+                        d="M 10 50 L 90 50"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                    <path
+                        d="M 50 10 L 50 90"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                </symbol>
+                <symbol id="browserTab" viewBox="0 0 400 100">
+                    <g>
+                        <rect
+                            x="10"
+                            y="10"
+                            height="80"
+                            width="380"
+                            fill="white"
+                            rx="15"
+                        />
+                        <path
+                            d="M 10 30 H 390 V 90 H 10 L 10 10"
+                            fill="white"
+                        />
+                    </g>
+                </symbol>
+                <symbol id="close" viewBox="0 0 100 100">
+                    <path
+                        d="M 10 10 L 90 90"
+                        stroke="#002101"
+                        stroke-width="10"
+                        fill="black"
+                    />
+                    <path
+                        d="M 10 90 L 90 10"
+                        stroke="#002101"
+                        stroke-width="10"
+                        fill="black"
+                    />
+                </symbol>
+                <symbol id="forwards" viewBox="0 0 100 100">
+                    <path
+                        d="M 60 10 L 90 50 L 60 90"
+                        fill="transparent"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                    <path
+                        d="M 90 50 L 10 50"
+                        fill="transparent"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                </symbol>
+                <symbol id="home" viewBox="0 0 100 100">
+                    <path
+                        d="M 50 10 L 10 30 L 20 30 L 20 90 L 80 90 L 80 30 L 90 30 L 50 10 Z"
+                        fill="transparent"
+                        stroke="#002101"
+                        stroke-width="10"
+                    />
+                </symbol>
+                <symbol id="refresh" viewBox="0 0 65 65">
+                    <g>
+                        <g fill="#002101">
+                            <path
+                                d="m32.5 4.999c-5.405 0-10.444 1.577-14.699 4.282l-5.75-5.75v16.11h16.11l-6.395-6.395c3.18-1.787 6.834-2.82 10.734-2.82 12.171 0 22.073 9.902 22.073 22.074 0 2.899-0.577 5.664-1.599 8.202l4.738 2.762c1.47-3.363 2.288-7.068 2.288-10.964 0-15.164-12.337-27.501-27.5-27.501z"
+                            />
+                            <path
+                                d="m43.227 51.746c-3.179 1.786-6.826 2.827-10.726 2.827-12.171 0-22.073-9.902-22.073-22.073 0-2.739 0.524-5.35 1.439-7.771l-4.731-2.851c-1.375 3.271-2.136 6.858-2.136 10.622 0 15.164 12.336 27.5 27.5 27.5 5.406 0 10.434-1.584 14.691-4.289l5.758 5.759v-16.112h-16.111l6.389 6.388z"
+                            />
+                        </g>
+                        <!--<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 33 33" to="360 33 33" dur="2s" begin="indefinite" repeatCount="indefinite"/>-->
+                    </g>
+                </symbol>
+                <symbol id="searchBar" viewBox="0 0 1190 100">
+                    <rect width="1190" height="100" rx="50" fill="white" />
+                </symbol>
+                <symbol
+                    id="windowContent"
+                    viewBox="0 0 1600 800"
+                    fill="aquamarine"
+                >
+                    <rect width="1580" height="780" />
+                </symbol>
+                <symbol id="pushNotification" viewBox="0 0 100 250" fill="">
+                    <rect width="250" height="100" fill="yellow" />
+                    <text fill="black" font-size="100px" x="0" y="100">
+                        Alert!
+                    </text>
+                </symbol>
+            </defs>
+            <use href="#browser" x="0" y="0" height="1000" width="1600" />
+            <use href="#close" x="0" y="0" height="100" width="100" />
+            <use href="#minimize" x="100" y="0" height="100" width="100" />
+            <use href="#maximize" x="200" y="0" height="100" width="100" />
+            <use href="#browserTab" x="300" y="0" height="100" width="400" />
+            <use href="#browserTab" x="700" y="0" height="100" width="400" />
+            <use href="#browserTab" x="1100" y="0" height="100" width="400" />
+            <use href="#back" x="0" y="100" height="100" width="100" />
+            <use href="#forwards" x="100" y="100" height="100" width="100" />
+            <use href="#home" x="200" y="100" height="100" width="100" />
+            <use href="#refresh" x="300" y="100" height="100" width="100" />
+            <use href="#searchBar" x="400" y="100" height="100" width="1190" />
+            <use
+                href="#windowContent"
+                x="10"
+                y="210"
+                height="800"
+                width="1600"
+            />
+            <use href="#worker" x="10" y="300" height="800" width="1600" />
+            <use
+                [ngClass]="{
+                    'push-notification-visible': pushNotificationVisible
+                }"
+                x="1300"
+                y="300"
+                href="#pushNotification"
+                height="200"
+                width="300"
+            />
+            <use
+                [ngClass]="{
+                    'push-notification-visible': pushNotificationVisible
+                }"
+                x="1300"
+                y="420"
+                href="#pushNotification"
+                height="200"
+                width="300"
+            />
+            <use
+                [ngClass]="{
+                    'push-notification-visible': pushNotificationVisible
+                }"
+                x="1300"
+                y="540"
+                href="#pushNotification"
+                height="200"
+                width="300"
+            />
+        </symbol>
+        <symbol id="swCache" viewBox="0 0 100 100">
+            <defs>
+                <symbol id="lightning" viewBox="0 0 100 100">
+                    <path
+                        d="M 60 30 L 40 60 H 50 L 40 80 L 60 55 H 50 Z"
+                        stroke="orange"
+                        stroke-width="4"
+                        fill="yellow"
+                        stroke-linecap="round"
+                    />
+                </symbol>
+            </defs>
+            <path
+                d="M 0 20 L 0 80 C 0 100 100 100 100 80 L 100 20 C 100 0 0 0 0 20 C 0 40 100 40 100 20"
+                stroke="black"
+                stroke-width="4"
+                fill="transparent"
+            />
+            <use href="#lightning" />
+        </symbol>
+        <symbol id="serviceWorkerFullExample" viewBox="700 -1000 1600 2500">
+            <g [ngClass]="{ 'primary-browser': primaryBrowser }">
+                <use
+                    href="#fullBrowser"
+                    x="-50"
+                    y="0"
+                    height="500"
+                    width="900"
+                />
+            </g>
+            <g [ngClass]="{ 'second-browser': secondBrowser }">
+                <use
+                    href="#fullBrowser"
+                    x="2080"
+                    y="0"
+                    height="500"
+                    width="900"
+                />
+                <use href="#horizMessagePort" x="930" y="-50" height="540" />
+                <text
+                    [ngClass]="{
+                        'second-browser-message-label': secondBrowserMessageLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="1820"
+                    y="220"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+            </g>
+            <g [ngClass]="{ 'service-worker': serviceWorker }">
+                <use href="#fullWorker" x="670" y="0" height="500" />
+                <use
+                    [ngClass]="{
+                        'service-worker-post-message': serviceWorkerPostMessage
+                    }"
+                    href="#horizMessagePort"
+                    x="10"
+                    y="-200"
+                    height="540"
+                />
+                <use
+                    [ngClass]="{
+                        'service-worker-fetch-event': serviceWorkerFetchEvent
+                    }"
+                    href="#horizMessagePort"
+                    x="10"
+                    y="-50"
+                    height="540"
+                />
+                <use
+                    [ngClass]="{
+                        'service-worker-sync-event': serviceWorkerSyncEvent
+                    }"
+                    href="#eventPort"
+                    x="100"
+                    y="500"
+                    height="540"
+                    transform="rotate(270, 1000, 1000), translate(900, 300)"
+                />
+                <text
+                    [ngClass]="{
+                        'service-worker-fetch-label': serviceWorkerFetchLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="900"
+                    y="270"
+                    height="200"
+                    width="200"
+                >
+                    Fetch
+                </text>
+                <text
+                    [ngClass]="{
+                        'service-worker-message-label': serviceWorkerMessageLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="900"
+                    y="70"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+                <text
+                    [ngClass]="{
+                        'service-worker-sync-label': serviceWorkerSyncLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="920"
+                    y="430"
+                    height="200"
+                    width="200"
+                >
+                    Sync
+                </text>
+            </g>
+            <g [ngClass]="{ 'backend-server': backendServer }">
+                <use href="#servers" x="650" y="900" height="500" />
+                <use
+                    [ngClass]="{ 'backend-push-event': backendPushEvent }"
+                    href="#eventPort"
+                    x="700"
+                    y="-900"
+                    height="540"
+                    transform="scale(1, -1)"
+                />
+                <use
+                    [ngClass]="{ 'backend-fetch-event': backendFetchEvent }"
+                    href="#messagePort"
+                    x="900"
+                    y="500"
+                    height="540"
+                />
+                <text
+                    [ngClass]="{
+                        'backend-server-push-label': backendServerPushLabel
+                    }"
+                    transform="rotate(90, 1000, 1000), translate(-170, -190)"
+                    fill="black"
+                    font-size="50px"
+                    x="800"
+                    y="950"
+                    height="200"
+                    width="200"
+                >
+                    Push
+                </text>
+                <text
+                    [ngClass]="{
+                        'backend-server-push-fetch': backendServerPushFetch
+                    }"
+                    transform="rotate(90, 1000, 1000), translate(-170, -420)"
+                    fill="black"
+                    font-size="50px"
+                    x="800"
+                    y="950"
+                    height="200"
+                    width="200"
+                >
+                    Fetch
+                </text>
+            </g>
+            <g [ngClass]="{ 'sw-cache': swCache }">
+                <use href="#swCache" x="650" y="-900" height="540" />
+                <use href="#messagePort" x="900" y="-400" height="540" />
+                <text
+                    [ngClass]="{ 'sw-cache-label': swCacheLabel }"
+                    fill="black"
+                    font-size="50px"
+                    x="1300"
+                    y="-200"
+                    height="200"
+                    width="200"
+                >
+                    Cache
+                </text>
+            </g>
+            <g [ngClass]="{ 'primary-worker': primaryWorker }">
+                <use href="#fullWorker" x="-640" y="900" height="300" />
+                <use href="#messagePort" x="-400" y="500" height="540" />
+                <text
+                    [ngClass]="{
+                        'primary-worker-message-label': primaryWorkerMessageLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="420"
+                    y="1050"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+            </g>
+            <g [ngClass]="{ 'second-worker': secondWorker }">
+                <use href="#fullWorker" x="80" y="900" height="300" />
+                <use href="#messagePort" x="200" y="500" height="540" />
+                <use
+                    [ngClass]="{
+                        'second-worker-message-channel': secondWorkerMessageChannel
+                    }"
+                    href="#horizMessagePort"
+                    x="-480"
+                    y="750"
+                    height="540"
+                />
+                <text
+                    [ngClass]="{
+                        'second-worker-message-label': secondWorkerMessageLabel
+                    }"
+                    transform="rotate(90, 1000, 1000), translate(-200, 300)"
+                    fill="black"
+                    font-size="50px"
+                    x="800"
+                    y="950"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+                <text
+                    [ngClass]="{
+                        'second-worker-message-label': secondWorkerMessageLabel
+                    }"
+                    transform="rotate(90, 1000, 1000), translate(-200, 900)"
+                    fill="black"
+                    font-size="50px"
+                    x="800"
+                    y="950"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+            </g>
+            <g
+                [ngClass]="{ 'db-worker': dbWorker }"
+                transform="translate(2000, 0)"
+            >
+                <use href="#fullWorker" x="-640" y="900" height="300" />
+                <use href="#messagePort" x="-400" y="500" height="540" />
+                <use href="#horizMessagePort" x="-480" y="750" height="540" />
+                <use
+                    href="#horizMessagePort"
+                    x="-1200"
+                    y="1250"
+                    height="540"
+                    transform="scale(.7, .7)"
+                />
+                <use href="#indexedDB" height="300" x="80" y="900" />
+                <text
+                    [ngClass]="{
+                        'db-worker-message-label': dbWorkerMessageLabel
+                    }"
+                    transform="rotate(90, 1000, 1000), translate(-200, 860)"
+                    fill="black"
+                    font-size="50px"
+                    x="800"
+                    y="950"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+                <text
+                    [ngClass]="{
+                        'db-worker-message-label': dbWorkerMessageLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="420"
+                    y="1050"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+                <text
+                    [ngClass]="{
+                        'db-worker-message-label': dbWorkerMessageLabel
+                    }"
+                    fill="black"
+                    font-size="50px"
+                    x="-230"
+                    y="1150"
+                    height="200"
+                    width="200"
+                >
+                    Message
+                </text>
+            </g>
+        </symbol>
+    </defs>
+    <use href="#serviceWorkerFullExample" />
+</svg>

@@ -1,0 +1,66 @@
+{
+    "npmScope": "worker-platform",
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": "*",
+        "tsconfig.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*"
+    },
+    "projects": {
+        "web-worker-simple-example": {
+            "tags": []
+        },
+        "web-worker-multiple-workers-example": {
+            "tags": []
+        },
+        "web-worker-and-service-worker-example": {
+            "tags": []
+        },
+        "testing": {
+            "tags": []
+        },
+        "service-worker-workbox-example": {
+            "tags": []
+        },
+        "service-worker-push-notification-example": {
+            "tags": []
+        },
+        "service-worker-prefetch-example": {
+            "tags": []
+        },
+        "service-worker-multiple-scopes-example": {
+            "tags": []
+        },
+        "service-worker-cross-tab-messaging-example": {
+            "tags": []
+        },
+        "service-worker-caching-example": {
+            "tags": []
+        },
+        "service-worker-angular-pwa-example": {
+            "tags": []
+        },
+        "homepage-webworker-rocks": {
+            "tags": []
+        },
+        "express-push-notification-example": {
+            "tags": []
+        },
+        "components": {
+            "tags": []
+        },
+        "dexie-webworker": {
+            "tags": []
+        },
+        "presenter": {
+            "tags": []
+        },
+        "redux-webworker": {
+            "tags": []
+        },
+        "slideshow": {
+            "tags": []
+        }
+    }
+}

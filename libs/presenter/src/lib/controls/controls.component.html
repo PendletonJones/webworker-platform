@@ -1,0 +1,44 @@
+<div class="contentContainer">
+    <ng-content></ng-content>
+</div>
+
+<div class="buttonGroup">
+    <div class="buttonContainer left">
+        <a
+            *ngFor="let bookmark of bookmarks"
+            mat-stroked-button
+            class="prevButton"
+            [routerLink]="bookmark.url"
+            >{{ bookmark.name }}</a
+        >
+    </div>
+
+    <div class="buttonContainer">
+        <button mat-button disabled class="prevButton">
+            {{ currentPage | async }}/{{ slides.length }}
+        </button>
+
+        <a mat-stroked-button class="prevButton" [routerLink]="slides[0]"
+            >Start</a
+        >
+
+        <a mat-stroked-button class="prevButton" color="warn" routerLink="/"
+            >Exit</a
+        >
+        <a
+            mat-raised-button
+            class="prevButton"
+            color="primary"
+            [disabled]="prevEnabled | async"
+            [routerLink]="prevLink | async"
+            >Prev</a
+        >
+        <a
+            mat-raised-button
+            color="primary"
+            [disabled]="nextEnabled | async"
+            [routerLink]="nextLink | async"
+            >Next</a
+        >
+    </div>
+</div>

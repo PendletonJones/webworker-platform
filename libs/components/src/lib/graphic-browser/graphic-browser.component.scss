@@ -1,0 +1,38 @@
+.browser-icon {
+    stroke: 'red';
+}
+
+svg {
+    background: white;
+}
+
+.primary-browser,
+.second-browser,
+.second-browser-message-label,
+.service-worker,
+.service-worker-post-message,
+.service-worker-fetch-event,
+.service-worker-sync-event,
+.service-worker-fetch-label,
+.service-worker-message-label,
+.service-worker-sync-label,
+.push-notification-visible,
+.backend-server,
+.backend-push-event,
+.backend-fetch-event,
+.backend-server-push-label,
+.backend-server-push-fetch,
+.sw-cache,
+.sw-cache-label,
+.primary-worker,
+.primary-worker-message-label,
+.second-worker,
+.second-worker-message-channel,
+.second-worker-message-label,
+.second-worker-message-label,
+.db-worker,
+.db-worker-message-label,
+.db-worker-message-label,
+.db-worker-message-label {
+    visibility: hidden;
+}

@@ -1,0 +1,22 @@
+---
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - ls -ahl
+      - npm install -ci
+  build:
+    commands:
+      - npm run affected:build -- --all --prod
+      - zip -j dist/apps/express-push-notification-example/bundle.zip dist/apps/express-push-notification-example/*.js
+      - sha256sum dist/apps/express-push-notification-example/bundle.zip > dist/apps/express-push-notification-example/bundle.zip.sha.txt
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/apps'
+
+
+

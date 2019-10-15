@@ -1,0 +1,47 @@
+<h1>Parallel Execution</h1>
+
+<h2>Single Thread</h2>
+
+Main Thread
+<div class="thread-container">
+    <ng-container *ngFor="let task of (combinedTask | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>
+
+<h2>Multiple Threads</h2>
+
+<worker-platform-code-block [language]="'typescript'" [content]="codeSample">
+</worker-platform-code-block>
+
+Main Thread
+<div class="thread-container">
+    <ng-container *ngFor="let task of (separateTaskA | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>
+
+Worker One
+<div class="thread-container">
+    <ng-container *ngFor="let task of (separateTaskB | async)">
+        <div
+            [style.width]="task.size"
+            [style.background]="task.color"
+            class="task"
+        >
+            {{ task.content }}
+        </div>
+    </ng-container>
+</div>

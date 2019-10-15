@@ -1,0 +1,6 @@
+<svg height="600" width="600">
+    <defs>
+
+    </defs>
+    <use href="#servers" x="0" y="0" height="100" width="100"/>
+</svg>

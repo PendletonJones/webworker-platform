@@ -1,0 +1,25 @@
+---
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo "install"
+      - ls -ahl
+      - npm install -ci
+  build:
+    commands:
+      - npx nx run testing:express-push-notification-example:e2e
+      - npx nx run testing:homepage-webworker-rocks:e2e
+      - npx nx run testing:service-worker-angular-pwa-example:e2e
+      - npx nx run testing:service-worker-caching-example:e2e
+      - npx nx run testing:service-worker-cross-tab-messaging-example:e2e
+      - npx nx run testing:service-worker-multiple-scopes-example:e2e
+      - npx nx run testing:service-worker-prefetch-example:e2e
+      - npx nx run testing:service-worker-push-notification-example:e2e
+      - npx nx run testing:web-worker-and-service-worker-example:e2e
+      - npx nx run testing:web-worker-multiple-workers-example:e2e
+      - npx nx run testing:web-worker-simple-example:e2e
+

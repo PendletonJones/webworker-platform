@@ -1,0 +1,1499 @@
+{
+    "version": 1,
+    "projects": {
+        "web-worker-simple-example": {
+            "projectType": "application",
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "apps/web-worker-simple-example",
+            "sourceRoot": "apps/web-worker-simple-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/web-worker-simple-example",
+                        "index": "apps/web-worker-simple-example/src/index.html",
+                        "main": "apps/web-worker-simple-example/src/main.ts",
+                        "polyfills": "apps/web-worker-simple-example/src/polyfills.ts",
+                        "tsConfig": "apps/web-worker-simple-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/web-worker-simple-example/src/favicon.ico",
+                            "apps/web-worker-simple-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/web-worker-simple-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/web-worker-simple-example/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "webWorkerTsConfig": "apps/web-worker-simple-example/tsconfig.worker.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/web-worker-simple-example/src/environments/environment.ts",
+                                    "with": "apps/web-worker-simple-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "web-worker-simple-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "web-worker-simple-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "web-worker-simple-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/web-worker-simple-example/tsconfig.app.json",
+                            "apps/web-worker-simple-example/tsconfig.spec.json",
+                            "apps/web-worker-simple-example/tsconfig.worker.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/web-worker-simple-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/web-worker-simple-example/jest.config.js",
+                        "tsConfig": "apps/web-worker-simple-example/tsconfig.spec.json",
+                        "setupFile": "apps/web-worker-simple-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "web-worker-multiple-workers-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/web-worker-multiple-workers-example",
+            "sourceRoot": "apps/web-worker-multiple-workers-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/web-worker-multiple-workers-example",
+                        "index": "apps/web-worker-multiple-workers-example/src/index.html",
+                        "main": "apps/web-worker-multiple-workers-example/src/main.ts",
+                        "polyfills": "apps/web-worker-multiple-workers-example/src/polyfills.ts",
+                        "tsConfig": "apps/web-worker-multiple-workers-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/web-worker-multiple-workers-example/src/favicon.ico",
+                            "apps/web-worker-multiple-workers-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/web-worker-multiple-workers-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/web-worker-multiple-workers-example/src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "webWorkerTsConfig": "apps/web-worker-multiple-workers-example/tsconfig.worker.json",
+                        "outputHashing": "all"
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "all",
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "web-worker-multiple-workers-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "web-worker-multiple-workers-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "web-worker-multiple-workers-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/web-worker-multiple-workers-example/tsconfig.app.json",
+                            "apps/web-worker-multiple-workers-example/tsconfig.spec.json",
+                            "apps/web-worker-multiple-workers-example/tsconfig.worker.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/web-worker-multiple-workers-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/web-worker-multiple-workers-example/jest.config.js",
+                        "tsConfig": "apps/web-worker-multiple-workers-example/tsconfig.spec.json",
+                        "setupFile": "apps/web-worker-multiple-workers-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "web-worker-and-service-worker-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/web-worker-and-service-worker-example",
+            "sourceRoot": "apps/web-worker-and-service-worker-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/web-worker-and-service-worker-example",
+                        "index": "apps/web-worker-and-service-worker-example/src/index.html",
+                        "main": "apps/web-worker-and-service-worker-example/src/main.ts",
+                        "polyfills": "apps/web-worker-and-service-worker-example/src/polyfills.ts",
+                        "tsConfig": "apps/web-worker-and-service-worker-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/web-worker-and-service-worker-example/src/favicon.ico",
+                            "apps/web-worker-and-service-worker-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/web-worker-and-service-worker-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/web-worker-and-service-worker-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/web-worker-and-service-worker-example/src/environments/environment.ts",
+                                    "with": "apps/web-worker-and-service-worker-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "web-worker-and-service-worker-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "web-worker-and-service-worker-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "web-worker-and-service-worker-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/web-worker-and-service-worker-example/tsconfig.app.json",
+                            "apps/web-worker-and-service-worker-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/web-worker-and-service-worker-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/web-worker-and-service-worker-example/jest.config.js",
+                        "tsConfig": "apps/web-worker-and-service-worker-example/tsconfig.spec.json",
+                        "setupFile": "apps/web-worker-and-service-worker-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "service-worker-caching-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-caching-example",
+            "sourceRoot": "apps/service-worker-caching-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-caching-example",
+                        "index": "apps/service-worker-caching-example/src/index.html",
+                        "main": "apps/service-worker-caching-example/src/main.ts",
+                        "polyfills": "apps/service-worker-caching-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-caching-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-caching-example/src/favicon.ico",
+                            "apps/service-worker-caching-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/service-worker-caching-example/src",
+                                "output": "./"
+                            },
+                            {
+                                "glob": "**/*.js",
+                                "input": "apps/service-worker-caching-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/service-worker-caching-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-caching-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-caching-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-caching-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-caching-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-caching-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-caching-example/tsconfig.app.json",
+                            "apps/service-worker-caching-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-caching-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-caching-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-caching-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-caching-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "service-worker-cross-tab-messaging-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-cross-tab-messaging-example",
+            "sourceRoot": "apps/service-worker-cross-tab-messaging-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-cross-tab-messaging-example",
+                        "index": "apps/service-worker-cross-tab-messaging-example/src/index.html",
+                        "main": "apps/service-worker-cross-tab-messaging-example/src/main.ts",
+                        "polyfills": "apps/service-worker-cross-tab-messaging-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-cross-tab-messaging-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-cross-tab-messaging-example/src/favicon.ico",
+                            "apps/service-worker-cross-tab-messaging-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/service-worker-cross-tab-messaging-example/src",
+                                "output": "./"
+                            },
+                            {
+                                "glob": "**/*.js",
+                                "input": "apps/service-worker-cross-tab-messaging-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/service-worker-cross-tab-messaging-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-cross-tab-messaging-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-cross-tab-messaging-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-cross-tab-messaging-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-cross-tab-messaging-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-cross-tab-messaging-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-cross-tab-messaging-example/tsconfig.app.json",
+                            "apps/service-worker-cross-tab-messaging-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-cross-tab-messaging-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-cross-tab-messaging-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-cross-tab-messaging-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-cross-tab-messaging-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "service-worker-multiple-scopes-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-multiple-scopes-example",
+            "sourceRoot": "apps/service-worker-multiple-scopes-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-multiple-scopes-example",
+                        "index": "apps/service-worker-multiple-scopes-example/src/index.html",
+                        "main": "apps/service-worker-multiple-scopes-example/src/main.ts",
+                        "polyfills": "apps/service-worker-multiple-scopes-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-multiple-scopes-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-multiple-scopes-example/src/favicon.ico",
+                            "apps/service-worker-multiple-scopes-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/service-worker-multiple-scopes-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/service-worker-multiple-scopes-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-multiple-scopes-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-multiple-scopes-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-multiple-scopes-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-multiple-scopes-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-multiple-scopes-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-multiple-scopes-example/tsconfig.app.json",
+                            "apps/service-worker-multiple-scopes-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-multiple-scopes-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-multiple-scopes-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-multiple-scopes-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-multiple-scopes-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "service-worker-prefetch-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-prefetch-example",
+            "sourceRoot": "apps/service-worker-prefetch-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-prefetch-example",
+                        "index": "apps/service-worker-prefetch-example/src/index.html",
+                        "main": "apps/service-worker-prefetch-example/src/main.ts",
+                        "polyfills": "apps/service-worker-prefetch-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-prefetch-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-prefetch-example/src/favicon.ico",
+                            "apps/service-worker-prefetch-example/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/service-worker-prefetch-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/service-worker-prefetch-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-prefetch-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-prefetch-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-prefetch-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-prefetch-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-prefetch-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-prefetch-example/tsconfig.app.json",
+                            "apps/service-worker-prefetch-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-prefetch-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-prefetch-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-prefetch-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-prefetch-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "service-worker-angular-pwa-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-angular-pwa-example",
+            "sourceRoot": "apps/service-worker-angular-pwa-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-angular-pwa-example",
+                        "index": "apps/service-worker-angular-pwa-example/src/index.html",
+                        "main": "apps/service-worker-angular-pwa-example/src/main.ts",
+                        "polyfills": "apps/service-worker-angular-pwa-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-angular-pwa-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-angular-pwa-example/src/favicon.ico",
+                            "apps/service-worker-angular-pwa-example/src/assets",
+                            "apps/service-worker-angular-pwa-example/src/manifest.webmanifest",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/service-worker-angular-pwa-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/service-worker-angular-pwa-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-angular-pwa-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-angular-pwa-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ],
+                            "serviceWorker": true,
+                            "ngswConfigPath": "apps/service-worker-angular-pwa-example/ngsw-config.json"
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-angular-pwa-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-angular-pwa-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-angular-pwa-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-angular-pwa-example/tsconfig.app.json",
+                            "apps/service-worker-angular-pwa-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-angular-pwa-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-angular-pwa-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-angular-pwa-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-angular-pwa-example/src/test-setup.ts"
+                    }
+                },
+                "serve-prod": {
+                    "builder": "@nrwl/workspace:run-commands",
+                    "options": {
+                        "parallel": false,
+                        "commands": [
+                            {
+                                "command": "npx ng build --prod service-worker-angular-pwa-example"
+                            },
+                            {
+                                "command": "npx http-server -p 8080 -c-1 dist/service-worker-angular-pwa-example"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "redux-webworker": {
+            "root": "libs/redux-webworker",
+            "sourceRoot": "libs/redux-webworker/src",
+            "projectType": "library",
+            "schematics": {},
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/redux-webworker/tsconfig.lib.json",
+                            "libs/redux-webworker/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/redux-webworker/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/redux-webworker/jest.config.js",
+                        "tsConfig": "libs/redux-webworker/tsconfig.spec.json"
+                    }
+                }
+            }
+        },
+        "dexie-webworker": {
+            "root": "libs/dexie-webworker",
+            "sourceRoot": "libs/dexie-webworker/src",
+            "projectType": "library",
+            "schematics": {},
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/dexie-webworker/tsconfig.lib.json",
+                            "libs/dexie-webworker/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!libs/dexie-webworker/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/dexie-webworker/jest.config.js",
+                        "tsConfig": "libs/dexie-webworker/tsconfig.spec.json"
+                    }
+                }
+            }
+        },
+        "presenter": {
+            "projectType": "library",
+            "root": "libs/presenter",
+            "sourceRoot": "libs/presenter/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/presenter/tsconfig.lib.json",
+                            "libs/presenter/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/presenter/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/presenter/jest.config.js",
+                        "tsConfig": "libs/presenter/tsconfig.spec.json",
+                        "setupFile": "libs/presenter/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "homepage-webworker-rocks": {
+            "projectType": "application",
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "apps/homepage-webworker-rocks",
+            "sourceRoot": "apps/homepage-webworker-rocks/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/homepage-webworker-rocks",
+                        "index": "apps/homepage-webworker-rocks/src/index.html",
+                        "main": "apps/homepage-webworker-rocks/src/main.ts",
+                        "polyfills": "apps/homepage-webworker-rocks/src/polyfills.ts",
+                        "tsConfig": "apps/homepage-webworker-rocks/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/homepage-webworker-rocks/src/favicon.ico",
+                            "apps/homepage-webworker-rocks/src/assets",
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/homepage-webworker-rocks/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/homepage-webworker-rocks/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/homepage-webworker-rocks/src/environments/environment.ts",
+                                    "with": "apps/homepage-webworker-rocks/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "homepage-webworker-rocks:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "homepage-webworker-rocks:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "homepage-webworker-rocks:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/homepage-webworker-rocks/tsconfig.app.json",
+                            "apps/homepage-webworker-rocks/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/homepage-webworker-rocks/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/homepage-webworker-rocks/jest.config.js",
+                        "tsConfig": "apps/homepage-webworker-rocks/tsconfig.spec.json",
+                        "setupFile": "apps/homepage-webworker-rocks/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "service-worker-push-notification-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-push-notification-example",
+            "sourceRoot": "apps/service-worker-push-notification-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-push-notification-example",
+                        "index": "apps/service-worker-push-notification-example/src/index.html",
+                        "main": "apps/service-worker-push-notification-example/src/main.ts",
+                        "polyfills": "apps/service-worker-push-notification-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-push-notification-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-push-notification-example/src/favicon.ico",
+                            "apps/service-worker-push-notification-example/src/assets",
+                            {
+                                "glob": "*.js",
+                                "input": "apps/service-worker-push-notification-example/src/",
+                                "output": "./"
+                            },
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/service-worker-push-notification-example/src",
+                                "output": "./"
+                            },
+                            {
+                                "glob": "**/*.ts",
+                                "input": "apps/express-push-notification-example/src",
+                                "output": "./"
+                            }
+                        ],
+                        "styles": [
+                            "libs/components/theme.scss",
+                            "apps/service-worker-push-notification-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-push-notification-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-push-notification-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-push-notification-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-push-notification-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-push-notification-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-push-notification-example/tsconfig.app.json",
+                            "apps/service-worker-push-notification-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-push-notification-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-push-notification-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-push-notification-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-push-notification-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "express-push-notification-example": {
+            "root": "apps/express-push-notification-example",
+            "sourceRoot": "apps/express-push-notification-example/src",
+            "projectType": "application",
+            "prefix": "express-push-notification-example",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/node:build",
+                    "options": {
+                        "externalDependencies": "none",
+                        "outputPath": "dist/apps/express-push-notification-example",
+                        "main": "apps/express-push-notification-example/src/main.ts",
+                        "tsConfig": "apps/express-push-notification-example/tsconfig.app.json",
+                        "assets": [
+                            "apps/express-push-notification-example/src/assets"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "optimization": true,
+                            "extractLicenses": true,
+                            "inspect": false,
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/express-push-notification-example/src/environments/environment.ts",
+                                    "with": "apps/express-push-notification-example/src/environments/environment.prod.ts"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@nrwl/node:execute",
+                    "options": {
+                        "buildTarget": "express-push-notification-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/express-push-notification-example/tsconfig.app.json",
+                            "apps/express-push-notification-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/express-push-notification-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/express-push-notification-example/jest.config.js",
+                        "tsConfig": "apps/express-push-notification-example/tsconfig.spec.json"
+                    }
+                }
+            }
+        },
+        "components": {
+            "projectType": "library",
+            "root": "libs/components",
+            "sourceRoot": "libs/components/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/components/tsconfig.lib.json",
+                            "libs/components/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/components/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/components/jest.config.js",
+                        "tsConfig": "libs/components/tsconfig.spec.json",
+                        "setupFile": "libs/components/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {}
+        },
+        "testing": {
+            "root": "apps/testing",
+            "sourceRoot": "apps/testing/src",
+            "projectType": "application",
+            "architect": {
+                "express-push-notification-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/express-push-notification-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "express-push-notification-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "express-push-notification-example:serve:production"
+                        }
+                    }
+                },
+                "homepage-webworker-rocks": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/src/integration/homepage-webworker-rocks/cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "homepage-webworker-rocks:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "homepage-webworker-rocks:serve:production"
+                        }
+                    }
+                },
+                "service-worker-angular-pwa-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/service-worker-angular-pwa-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "service-worker-angular-pwa-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "service-worker-angular-pwa-example:serve:production"
+                        }
+                    }
+                },
+                "service-worker-caching-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/service-worker-caching-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "service-worker-caching-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "service-worker-caching-example:serve:production"
+                        }
+                    }
+                },
+                "service-worker-cross-tab-messaging-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/service-worker-cross-tab-messaging-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "service-worker-cross-tab-messaging-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "service-worker-cross-tab-messaging-example:serve:production"
+                        }
+                    }
+                },
+                "service-worker-multiple-scopes-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/service-worker-multiple-scopes-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "service-worker-multiple-scopes-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "service-worker-multiple-scopes-example:serve:production"
+                        }
+                    }
+                },
+                "service-worker-prefetch-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/service-worker-prefetch-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "service-worker-prefetch-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "service-worker-prefetch-example:serve:production"
+                        }
+                    }
+                },
+                "service-worker-push-notification-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/service-worker-push-notification-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "service-worker-push-notification-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "service-worker-push-notification-example:serve:production"
+                        }
+                    }
+                },
+                "web-worker-and-service-worker-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/web-worker-and-service-worker-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "web-worker-and-service-worker-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "web-worker-and-service-worker-example:serve:production"
+                        }
+                    }
+                },
+                "web-worker-multiple-workers-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/web-worker-multiple-workers-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "web-worker-multiple-workers-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "web-worker-multiple-workers-example:serve:production"
+                        }
+                    }
+                },
+                "web-worker-simple-example": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/testing/configs/web-worker-simple-example.cypress.json",
+                        "tsConfig": "apps/testing/tsconfig.e2e.json",
+                        "devServerTarget": "web-worker-simple-example:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "web-worker-simple-example:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": ["apps/testing/tsconfig.e2e.json"],
+                        "exclude": ["**/node_modules/**", "!apps/testing/**"]
+                    }
+                }
+            }
+        },
+        "service-worker-workbox-example": {
+            "projectType": "application",
+            "schematics": {},
+            "root": "apps/service-worker-workbox-example",
+            "sourceRoot": "apps/service-worker-workbox-example/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/service-worker-workbox-example",
+                        "index": "apps/service-worker-workbox-example/src/index.html",
+                        "main": "apps/service-worker-workbox-example/src/main.ts",
+                        "polyfills": "apps/service-worker-workbox-example/src/polyfills.ts",
+                        "tsConfig": "apps/service-worker-workbox-example/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/service-worker-workbox-example/src/favicon.ico",
+                            "apps/service-worker-workbox-example/src/assets"
+                        ],
+                        "styles": [
+                            "apps/service-worker-workbox-example/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/service-worker-workbox-example/src/environments/environment.ts",
+                                    "with": "apps/service-worker-workbox-example/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": true,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "service-worker-workbox-example:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "service-worker-workbox-example:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "service-worker-workbox-example:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/service-worker-workbox-example/tsconfig.app.json",
+                            "apps/service-worker-workbox-example/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**",
+                            "!apps/service-worker-workbox-example/**"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "apps/service-worker-workbox-example/jest.config.js",
+                        "tsConfig": "apps/service-worker-workbox-example/tsconfig.spec.json",
+                        "setupFile": "apps/service-worker-workbox-example/src/test-setup.ts"
+                    }
+                }
+            }
+        },
+        "slideshow": {
+            "projectType": "library",
+            "root": "libs/slideshow",
+            "sourceRoot": "libs/slideshow/src",
+            "prefix": "worker-platform",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/slideshow/tsconfig.lib.json",
+                            "libs/slideshow/tsconfig.spec.json"
+                        ],
+                        "exclude": ["**/node_modules/**", "!libs/slideshow/**"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "options": {
+                        "jestConfig": "libs/slideshow/jest.config.js",
+                        "tsConfig": "libs/slideshow/tsconfig.spec.json",
+                        "setupFile": "libs/slideshow/src/test-setup.ts"
+                    }
+                }
+            },
+            "schematics": {
+                "@nrwl/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        }
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/angular"
+    },
+    "schematics": {
+        "@nrwl/angular:application": {
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:library": {
+            "unitTestRunner": "jest"
+        },
+        "@nrwl/react": {
+            "application": {
+                "babel": true,
+                "style": "css",
+                "linter": "tslint"
+            },
+            "component": {
+                "style": "css"
+            },
+            "library": {
+                "style": "css",
+                "linter": "tslint"
+            }
+        }
+    },
+    "defaultProject": "web-worker-simple-example"
+}

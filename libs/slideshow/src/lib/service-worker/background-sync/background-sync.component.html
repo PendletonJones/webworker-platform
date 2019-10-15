@@ -1,0 +1,90 @@
+<h1>Background Sync</h1>
+
+<mat-tab-group>
+    <mat-tab [label]="'Diagram'">
+        <h2>Diagram</h2>
+        <worker-platform-graphic-browser
+            [primaryBrowser]="Show"
+            [serviceWorker]="Show"
+            [backendServer]="Show"
+            [backendServerPushFetch]="Show"
+            [backendFetchEvent]="Show"
+            [serviceWorkerSyncEvent]="Show"
+            [serviceWorkerSyncLabel]="Show"
+
+            [backendPushEvent]="Hide"
+            [backendServerPushLabel]="Hide"
+            [pushNotificationVisible]="Hide"
+            [secondBrowser]="Hide"
+            [secondBrowserMessageLabel]="Hide"
+            [serviceWorkerPostMessage]="Hide"
+            [serviceWorkerFetchEvent]="Hide"
+            [serviceWorkerFetchLabel]="Hide"
+            [serviceWorkerMessageLabel]="Hide"
+            [swCache]="Hide"
+            [swCacheLabel]="Hide"
+            [primaryWorker]="Hide"
+            [primaryWorkerMessageLabel]="Hide"
+            [secondWorker]="Hide"
+            [secondWorkerMessageChannel]="Hide"
+            [secondWorkerMessageLabel]="Hide"
+            [dbWorker]="Hide"
+            [dbWorkerMessageLabel]="Hide"
+        ></worker-platform-graphic-browser>
+    </mat-tab>
+    <mat-tab label="Code Sample">
+        <h2>Main Thread</h2>
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="codeSample2"
+        >
+        </worker-platform-code-block>
+        <h2>Worker Thread</h2>
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="codeSample"
+        >
+        </worker-platform-code-block>
+    </mat-tab>
+    <mat-tab label="Know This">
+        <div>
+            <h2>Know This</h2>
+            <ul>
+                <li>Event is initiated by browser</li>
+                <li>Events can be retried</li>
+                <li>
+                    Advanced feature, probably useless until you're doing full
+                    PWA
+                </li>
+                <li>Useful for making PWA not completely 'read only'</li>
+                <li>Sync events should not be considered predictable</li>
+                <li>Does NOT require permissions</li>
+                <li>periodicsync in the future?</li>
+            </ul>
+            <h2>Use Cases</h2>
+            <ul>
+                <li>Send a chat message</li>
+                <li>Upload a picture</li>
+                <li>Download Cat pictures ahead of time</li>
+                <li>Protect against navigations and tab closures</li>
+                <li>Non critical tasks??? Probably not a bank transfer</li>
+            </ul>
+        </div>
+    </mat-tab>
+    <mat-tab label="Read More">
+        <h2>Read More</h2>
+        <ul>
+            <li>
+                https://developers.google.com/web/updates/2015/12/background-sync
+            </li>
+            <li>
+                https://developers.google.com/web/tools/workbox/modules/workbox-background-sync
+            </li>
+            <li>
+                https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+            </li>
+            <li>https://ponyfoo.com/articles/backgroundsync</li>
+            <li>https://developers.google.com/web/updates/2019/08/periodic-background-sync</li>
+        </ul>
+    </mat-tab>
+</mat-tab-group>

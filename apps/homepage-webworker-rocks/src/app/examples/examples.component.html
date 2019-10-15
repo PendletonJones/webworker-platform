@@ -1,0 +1,40 @@
+<header class="flex">
+    <h1>Webworker Rocks!</h1>
+    <a
+        class="github-button"
+        href="https://github.com/PendletonJones/webworker-platform"
+        data-icon="octicon-star"
+        data-size="large"
+        data-show-count="true"
+        aria-label="Star PendletonJones/webworker-platform on GitHub"
+        >Star</a
+    >
+</header>
+<section class="readMore">
+    <div class="routerLink">
+        <a [routerLink]="['/slideshow']">Slideshow</a>
+    </div>
+    <div class="routerLink">
+        <a [routerLink]="['/resources']">Resources</a>
+    </div>
+</section>
+<main>
+    <h2>Webworkers</h2>
+    <section>
+        <ng-container *ngFor="let card of webWorkerCards">
+            <worker-platform-card
+                [useTitle]="card.useTitle"
+                [url]="card.url"
+            ></worker-platform-card>
+        </ng-container>
+    </section>
+    <h2>Service Workers</h2>
+    <section>
+        <ng-container *ngFor="let card of serviceWorkerCards">
+            <worker-platform-card
+                [useTitle]="card.useTitle"
+                [url]="card.url"
+            ></worker-platform-card>
+        </ng-container>
+    </section>
+</main>

@@ -1,0 +1,12 @@
+<mat-tab-group>
+    <ng-container *ngFor="let article of (content | async)">
+        <mat-tab [label]="article[0]">
+            <h2>{{ article[0] }}</h2>
+            <worker-platform-code-block
+                [language]="'typescript'"
+                [content]="article[1]"
+            >
+            </worker-platform-code-block>
+        </mat-tab>
+    </ng-container>
+</mat-tab-group>

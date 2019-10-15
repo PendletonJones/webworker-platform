@@ -1,0 +1,24 @@
+<h1>Message Passing</h1>
+
+<mat-grid-list cols="2" rowHeight="400px" gutterSize="32px" class="grid-list">
+    <mat-grid-tile colspan="1" rowspan="1" class="grid-tile">
+        <div>
+            <h2>
+                Transferables
+            </h2>
+            <ul>
+                <li class="highlight">MessagePort</li>
+                <li>ArrayBuffer</li>
+                <li>ImageBitmap</li>
+                <li>OffscreenCanvas</li>
+            </ul>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" class="grid-tile">
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="codeSample"
+        >
+        </worker-platform-code-block>
+    </mat-grid-tile>
+</mat-grid-list>

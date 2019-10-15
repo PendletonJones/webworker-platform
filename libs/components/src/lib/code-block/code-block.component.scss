@@ -1,0 +1,78 @@
+:host {
+    font-size: 1.3em;
+}
+
+.code-block-container {
+    display: flex;
+    position: relative;
+    overflow: auto;
+    :focus {
+        // border: solid orange 10px;
+        overflow: hidden;
+    }
+    // border: solid green 10px;
+}
+
+code {
+    padding: 0px;
+    margin: 0px;
+    padding-right: 2em;
+    box-sizing: border-box;
+    overflow: visible;
+    display: block;
+    width: auto;
+    font-size: 0.8em;
+}
+
+pre {
+    tab-size: 4;
+    flex-grow: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+pre::before {
+    counter-reset: listing;
+}
+.lineNum {
+    counter-increment: listing;
+    padding-left: auto;
+    margin-left: auto;
+}
+.lineNum::before {
+    content: counter(listing);
+    display: inline-block;
+    padding-left: 1em;
+    margin-left: auto;
+    text-align: right;
+    user-select: none;
+    margin-left: 0.5em;
+    padding-right: 1em;
+    margin-right: 1em;
+    min-width: 2em;
+    max-width: 2em;
+    border-right: 1px solid white;
+}
+
+pre code:first-child {
+    padding-top: 1em;
+}
+
+pre code:last-child {
+    padding-bottom: 1em;
+}
+
+pre code:nth-child(2n) {
+    filter: brightness(107%);
+}
+
+code:hover,
+code:focus,
+pre code:nth-child(2n):hover,
+pre code:nth-child(2n):focus {
+    filter: brightness(150%);
+}
+
+.hidden {
+    visibility: hidden;
+}

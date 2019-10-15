@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    font-size: 1.4em;
+}
+
+.highlight {
+    background-color: #fffca6;
+    color: black;
+    padding: 0.2em;
+    font-size: 2em;
+    margin: 0.2em;
+}
+
+.grid-list {
+    border: solid red 2px;
+}
+
+.grid-tile {
+    border: solid orange 2px;
+}

@@ -1,0 +1,80 @@
+<h1>Caching</h1>
+<mat-tab-group>
+    <mat-tab [label]="'Diagram'">
+        <h2>Diagram</h2>
+        <worker-platform-graphic-browser
+            [primaryBrowser]="Show"
+            [serviceWorker]="Show"
+            [backendServer]="Show"
+            [serviceWorkerFetchEvent]="Show"
+            [serviceWorkerFetchLabel]="Show"
+            [backendFetchEvent]="Show"
+            [swCache]="Show"
+            [swCacheLabel]="Show"
+            [backendServerPushFetch]="Show"
+            [backendPushEvent]="Hide"
+            [backendServerPushLabel]="Hide"
+            [pushNotificationVisible]="Hide"
+            [secondBrowser]="Hide"
+            [secondBrowserMessageLabel]="Hide"
+            [serviceWorkerPostMessage]="Hide"
+            [serviceWorkerSyncEvent]="Hide"
+            [serviceWorkerMessageLabel]="Hide"
+            [serviceWorkerSyncLabel]="Hide"
+            [primaryWorker]="Hide"
+            [primaryWorkerMessageLabel]="Hide"
+            [secondWorker]="Hide"
+            [secondWorkerMessageChannel]="Hide"
+            [secondWorkerMessageLabel]="Hide"
+            [dbWorker]="Hide"
+            [dbWorkerMessageLabel]="Hide"
+        ></worker-platform-graphic-browser>
+    </mat-tab>
+    <mat-tab label="Code Samples">
+        <h2>Main Thread</h2>
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="mainThreadCode"
+        >
+        </worker-platform-code-block>
+        <h2>Worker Thread</h2>
+        <worker-platform-code-block
+            [language]="'typescript'"
+            [content]="workerThreadCode"
+        >
+        </worker-platform-code-block>
+    </mat-tab>
+    <mat-tab label="Know This">
+        <div>
+            <h2>Know This</h2>
+            <ul>
+                <li>Cache API is available in ServiceWorker and main thread</li>
+                <li>
+                    Caching is NOT required for ServiceWorker, and ServiceWorker
+                    is NOT required for caching, although people closely
+                    associate the two them
+                </li>
+                <li>
+                    SW Caching enables offline web apps and installable web apps
+                </li>
+                <li>The Cache stores Request/Response object pairs</li>
+                <li>You can create multiple named caches</li>
+                <li>
+                    YOU are responsible for clearing out old caches. Objects
+                    never expire
+                </li>
+                <li>With Prefetching, parsed javascript is cached</li>
+                <li>AppCache was TERRIBLE</li>
+            </ul>
+        </div>
+    </mat-tab>
+    <mat-tab label="Read More">
+        <h2>Read More</h2>
+        <ul>
+            <li>https://developer.mozilla.org/en-US/docs/Web/API/Cache</li>
+            <li>
+                https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api
+            </li>
+        </ul>
+    </mat-tab>
+</mat-tab-group>

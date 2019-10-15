@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    padding: 8px;
+}
+
+.readMore {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.routerLink {
+    padding: 0.5em;
+    font-size: 1.2em;
+}
